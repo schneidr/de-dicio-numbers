@@ -45,10 +45,10 @@ public class GermanFormatter extends Formatter {
         put(90L, "neunzig");
         put(100L, "hundert");
         put(1000L, "tausend");
-        put(1000000L, "Million");
     }};
     
     final Map<Long, String> NUMBER_NAMES_SHORT_SCALE = new HashMap<Long, String>(NUMBER_NAMES) {{
+        put(1000000L, "Million");
         put(1000000000L, "Milliarde");
         put(1000000000000L, "Billion");
         put(1000000000000000L, "Billiarde");
@@ -176,10 +176,10 @@ public class GermanFormatter extends Formatter {
                 // This handles negatives of powers separately from the normal
                 // handling since each call disables the scientific flag
                 final double n = Double.parseDouble(parts[0]);
-                return String.format("%s%s times ten to the power of %s%s",
-                        n < 0 ? "negative " : "",
+                return String.format("%s%s mal zehn hoch %s%s",
+                        n < 0 ? "minus " : "",
                         pronounceNumber(Math.abs(n), places, shortScale, false, false),
-                        power < 0 ? "negative " : "",
+                        power < 0 ? "minus " : "",
                         pronounceNumber(Math.abs(power), places, shortScale, false, false));
             }
         }
@@ -226,7 +226,7 @@ public class GermanFormatter extends Formatter {
 
         if (!ordinal && NUMBER_NAMES.containsKey(numberLong)) {
             if (number > 90) {
-                result.append("one ");
+                result.append("ein");
             }
             result.append(NUMBER_NAMES.get(numberLong));
 
@@ -252,7 +252,11 @@ public class GermanFormatter extends Formatter {
                             groupName += " " + ORDINAL_NAMES_SHORT_SCALE.get(magnitude);
                         }
                     } else {
-                        groupName += " " + NUMBER_NAMES_SHORT_SCALE.get(magnitude);
+                        String name = NUMBER_NAMES_SHORT_SCALE.get(magnitude);
+                        if (z > 1) {
+                            name += (name.endsWith("e") ? "n" : "en");
+                        }
+                        groupName += " " + name;
                     }
                 }
 
@@ -276,14 +280,14 @@ public class GermanFormatter extends Formatter {
                 if (z < 1000) {
                     groupName = subThousand(z, i == 0 && ordi);
                 } else {
-                    groupName = subThousand(z / 1000, false) + " thousand";
+                    groupName = subThousand(z / 1000, false) + "tausend";
                     if (z % 1000 != 0) {
                         groupName += (i == 0 ? ", " : " ") + subThousand(z % 1000, i == 0 && ordi);
                     } else if (i == 0 && ordi) {
                         if (z / 1000 == 1) {
-                            groupName = "thousandth"; // remove "one" from "one thousandth"
+                            groupName = "tausendste";
                         } else {
-                            groupName += "th";
+                            groupName += "ste";
                         }
                     }
                 }
@@ -314,7 +318,7 @@ public class GermanFormatter extends Formatter {
             if (number < 1.0 && (result.length() == 0 || "minus ".contentEquals(result))) {
                 result.append("zero"); // nothing was written before
             }
-            result.append(" point");
+            result.append(" Komma");
 
             final String fractionalPart = String.format("%." + realPlaces + "f", number % 1);
             for (int i = 2; i < fractionalPart.length(); ++i) {
@@ -424,7 +428,7 @@ public class GermanFormatter extends Formatter {
             return (n % 10 > 0 ? subThousand(n % 10, false) : "") + "und" + subThousand(n - n % 10, ordinal);
         } else {
             return NUMBER_NAMES.get(n / 100) + "hundert"
-                    + (n % 100 > 0 ? " and " + subThousand(n % 100, ordinal)
+                    + (n % 100 > 0 ? subThousand(n % 100, ordinal)
                     : (ordinal ? "th" : ""));
         }
     }
