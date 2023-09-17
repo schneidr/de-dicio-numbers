@@ -47,26 +47,13 @@
       "categories": [
         "ignore",
         "date_time_ignore",
-        "thousand_separator"
+        "ordinal_suffix",
+        "thousand_separator",
+        "point",
+        "date_time_ignore"
       ],
       "values": [
         "."
-      ]
-    },
-    {
-      "categories": [
-        "ordinal_suffix"
-      ],
-      "values": [
-        "."
-      ]
-    },
-    {
-      "categories": [
-        "point"
-      ],
-      "values": [
-        "Punkt"
       ]
     },
     {
@@ -76,16 +63,6 @@
       ],
       "values": [
         "Punkt"
-      ]
-    },
-    {
-      "categories": [
-        "point",
-        "ignore",
-        "date_time_ignore"
-      ],
-      "values": [
-        "."
       ]
     },
     {
@@ -204,7 +181,8 @@
         "positive",
         "day_adder_after",
         "special_minute_after",
-        "pre_special_hour"
+        "pre_special_hour",
+        "ampm_after"
       ],
       "values": [
         "nach"
@@ -218,7 +196,8 @@
         "pre_relative_indicator",
         "post_relative_indicator",
         "negative",
-        "pre_special_hour"
+        "pre_special_hour",
+        "ampm_before"
       ],
       "values": [
         "vor"
@@ -400,22 +379,6 @@
       "values": [
         "era",
         "e"
-      ]
-    },
-    {
-      "categories": [
-        "ampm_before"
-      ],
-      "values": [
-        "vor"
-      ]
-    },
-    {
-      "categories": [
-        "ampm_after"
-      ],
-      "values": [
-        "nach"
       ]
     },
     {
