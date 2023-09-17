@@ -1,12 +1,15 @@
 {
   "spaces": " \t\n\f\r:;_!?<>|=()[]{}»«*~^`'\"",
-  "characters_as_word": "%‰#-+.,/",
+  "characters_as_word": "%‰#-+.,/°",
+  "compound_word_piece_category": "compound_word_piece",
   "raw_number_categories": [
     "number",
     "raw"
   ],
   "plural_endings": [
-    "s"
+    "en",
+    "e",
+    "er"
   ],
   "word_matches": [
     {
@@ -15,7 +18,7 @@
         "date_time_ignore"
       ],
       "values": [
-        "and"
+        "und"
       ]
     },
     {
@@ -47,7 +50,7 @@
         "thousand_separator"
       ],
       "values": [
-        ","
+        "."
       ]
     },
     {
@@ -55,10 +58,7 @@
         "ordinal_suffix"
       ],
       "values": [
-        "st",
-        "nd",
-        "rd",
-        "th"
+        "."
       ]
     },
     {
@@ -66,16 +66,16 @@
         "point"
       ],
       "values": [
-        "point"
+        "Punkt"
       ]
     },
     {
       "categories": [
         "point",
-        "post_oclock"
+        "pre_oclock"
       ],
       "values": [
-        "dot"
+        "Punkt"
       ]
     },
     {
@@ -93,8 +93,7 @@
         "fraction_separator"
       ],
       "values": [
-        "over",
-        "divided"
+        "geteilt"
       ]
     },
     {
@@ -111,7 +110,7 @@
         "fraction_separator_secondary"
       ],
       "values": [
-        "by"
+        "durch"
       ]
     },
     {
@@ -131,7 +130,7 @@
         "negative"
       ],
       "values": [
-        "negative",
+        "negativ",
         "minus"
       ]
     },
@@ -152,7 +151,7 @@
         "date_time_ignore"
       ],
       "values": [
-        "of"
+        "von"
       ]
     },
     {
@@ -160,7 +159,7 @@
         "yesterday"
       ],
       "values": [
-        "yesterday"
+        "gestern"
       ]
     },
     {
@@ -168,7 +167,7 @@
         "today"
       ],
       "values": [
-        "today"
+        "heute"
       ]
     },
     {
@@ -176,19 +175,18 @@
         "tomorrow"
       ],
       "values": [
-        "tomorrow",
-        "morrow"
+        "morgen"
       ]
     },
     {
       "categories": [
-        "day_adder_the",
-        "date_time_ignore",
         "pre_hour",
-        "pre_special_hour"
+        "pre_special_hour",
+        "day_adder_the",
+        "date_time_ignore"
       ],
       "values": [
-        "the"
+        "der"
       ]
     },
     {
@@ -196,7 +194,7 @@
         "day_adder_day"
       ],
       "values": [
-        "day"
+        "Tag"
       ]
     },
     {
@@ -209,7 +207,7 @@
         "pre_special_hour"
       ],
       "values": [
-        "after"
+        "nach"
       ]
     },
     {
@@ -223,7 +221,7 @@
         "pre_special_hour"
       ],
       "values": [
-        "before"
+        "vor"
       ]
     },
     {
@@ -282,7 +280,7 @@
         "pre_oclock"
       ],
       "values": [
-        "on"
+        "um"
       ]
     },
     {
@@ -409,7 +407,7 @@
         "ampm_before"
       ],
       "values": [
-        "ante"
+        "vor"
       ]
     },
     {
@@ -417,8 +415,7 @@
         "ampm_after"
       ],
       "values": [
-        "post",
-        "p"
+        "nach"
       ]
     },
     {
@@ -426,9 +423,7 @@
         "ampm_identifier"
       ],
       "values": [
-        "meridiem",
-        "meridian",
-        "m"
+        "mittags"
       ]
     },
     {
@@ -436,7 +431,7 @@
         "ampm_before_combined"
       ],
       "values": [
-        "am"
+        "vormittags"
       ]
     },
     {
@@ -444,7 +439,7 @@
         "ampm_after_combined"
       ],
       "values": [
-        "pm"
+        "nachmittags"
       ]
     },
     {
@@ -452,7 +447,7 @@
         "post_oclock"
       ],
       "values": [
-        "clock"
+        "Uhr"
       ]
     },
     {
@@ -677,30 +672,29 @@
         "month_name"
       ],
       "values": {
-        "january": 1,
-        "jan": 1,
-        "february": 2,
-        "feb": 2,
-        "march": 3,
-        "mar": 3,
-        "april": 4,
-        "apr": 4,
-        "may": 5,
-        "june": 6,
-        "jun": 6,
-        "july": 7,
-        "jul": 7,
-        "august": 8,
-        "aug": 8,
-        "september": 9,
-        "sep": 9,
-        "sept": 9,
-        "october": 10,
-        "oct": 10,
-        "november": 11,
-        "nov": 11,
-        "december": 12,
-        "dec": 12
+        "Januar": 1,
+        "Jan.": 1,
+        "Februar": 2,
+        "Feb.": 2,
+        "März": 3,
+        "Mrz.": 3,
+        "April": 4,
+        "Apr.": 4,
+        "Mai": 5,
+        "Juni": 6,
+        "Jun.": 6,
+        "Juli": 7,
+        "Jul.": 7,
+        "August": 8,
+        "Aug.": 8,
+        "September": 9,
+        "Sep.": 9,
+        "Oktober": 10,
+        "Okt.": 10,
+        "November": 11,
+        "Nov.": 11,
+        "Dezember": 12,
+        "Dez.": 12
       }
     },
     {
@@ -708,20 +702,20 @@
         "day_of_week"
       ],
       "values": {
-        "monday": 0,
-        "mon": 0,
-        "tuesday": 1,
-        "tue": 1,
-        "wednesday": 2,
-        "wed": 2,
-        "thursday": 3,
-        "thu": 3,
-        "friday": 4,
-        "fri": 4,
-        "saturday": 5,
-        "sat": 5,
-        "sunday": 6,
-        "sun": 6
+        "Montag": 0,
+        "Mo.": 0,
+        "Dienstag": 1,
+        "Di.": 1,
+        "Mittwoch": 2,
+        "Mi.": 2,
+        "Donnerstag.": 3,
+        "Do.": 3,
+        "Freitag": 4,
+        "Fr.": 4,
+        "Samstag": 5,
+        "Sa.": 5,
+        "Sonntag": 6,
+        "So.": 6
       }
     },
     {
@@ -730,12 +724,10 @@
         "moment_of_day"
       ],
       "values": {
-        "noon": 12,
-        "noons": 12,
-        "midday": 12,
-        "middays": 12,
-        "midnight": 0,
-        "midnights": 0
+        "Mittag": 12,
+        "Mittage": 12,
+        "Mitternacht": 0,
+        "Mitternächte": 0
       }
     },
     {
@@ -743,103 +735,91 @@
         "moment_of_day"
       ],
       "values": {
-        "night": 3,
-        "nights": 3,
-        "nighttime": 3,
-        "dawn": 6,
+        "Nacht": 3,
+        "Nächte": 3,
+        "Nachtzeit": 3,
+        "nächtlich": 3,
+        "Morgendämmerung": 6,
         "dawning": 6,
-        "aurora": 6,
-        "morning": 9,
+        "Morgenröte": 6,
+        "Morgen": 9,
         "mornings": 9,
         "lunch": 12,
         "lunches": 12,
         "dinner": 20,
         "dinners": 20,
-        "afternoon": 15,
-        "afternoons": 15,
-        "sunset": 18,
-        "dusk": 18,
-        "evening": 21,
-        "evenings": 21,
+        "Nachmittag": 15,
+        "Nachmittage": 15,
+        "Sonnenuntergang": 18,
+        "Abenddämmerung": 18,
+        "Abend": 21,
+        "Abende": 21,
         "tonight": 23
       }
     }
   ],
   "duration_words": {
     "1 NANOS": [
-      "nanosecond",
-      "nanoseconds",
+      "Nanosekunde",
+      "Nanosekunden",
       "ns"
     ],
     "1 MICROS": [
-      "microsecond",
-      "microseconds",
+      "Mikrosekunde",
+      "Mikrosekunden",
       "μs"
     ],
     "1 MILLIS": [
-      "millisecond",
-      "milliseconds",
+      "Millisekunde",
+      "Millisekunden",
       "ms"
     ],
     "1 SECONDS": [
-      "second",
-      "seconds",
-      "s",
-      "sec",
-      "secs"
+      "Sekunde",
+      "Sekunden",
+      "Sek."
     ],
     "1 MINUTES": [
-      "minute",
-      "minutes",
-      "m",
-      "min",
-      "mins"
+      "Minute",
+      "Minuten",
+      "Min."
     ],
     "1 HOURS": [
-      "hour",
-      "hours",
-      "h",
-      "hr",
-      "hrs"
+      "Stunde",
+      "Stunden",
+      "Std."
     ],
     "1 DAYS": [
-      "day",
-      "days",
-      "d"
+      "Tag",
+      "Tage",
+      "Tg."
     ],
     "1 WEEKS": [
-      "week",
-      "weeks",
-      "w"
+      "Woche",
+      "Wochen",
+      "Wo."
     ],
     "1 MONTHS": [
-      "month",
-      "months",
-      "mo",
-      "mon",
-      "mons"
+      "Monat",
+      "Monate",
+      "Mon."
     ],
     "1 YEARS": [
-      "year",
-      "years",
-      "yr",
-      "yrs"
+      "Jahr",
+      "Jahre",
+      "J."
     ],
     "1 DECADES": [
-      "decade",
-      "decades"
+      "Dekade",
+      "Dekaden"
     ],
     "1 CENTURIES": [
-      "century",
-      "centuries"
+      "Jahrhundert",
+      "Jahrhunderte"
     ],
     "1 MILLENNIA": [
-      "millenium",
-      "millennium",
-      "milleniums",
-      "millenniums",
-      "millenia",
-      "millennia"
+      "Jahrtausend",
+      "Jahrtausende"
     ]
   },
   "duration_restrict_after_number": [
